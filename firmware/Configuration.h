@@ -55,7 +55,7 @@ Here are some standard links for getting your machine calibrated:
   #define DELTA_RADIUS (DELTA_SMOOTH_ROD_OFFSET-DELTA_EFFECTOR_OFFSET-DELTA_CARRIAGE_OFFSET + 1)
 
   // Print surface diameter/2 minus unreachable space (avoid collisions with vertical towers).
-  #define DELTA_PRINTABLE_RADIUS 140.0
+  #define DELTA_PRINTABLE_RADIUS 120.0
 
 #endif
 
@@ -361,7 +361,7 @@ const bool Z_MIN_ENDSTOP_INVERTING = true; // set to true to invert the logic of
 const bool X_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic of the endstop.
 const bool Y_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic of the endstop.
 const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic of the endstop.
-const bool Z_MIN_PROBE_ENDSTOP_INVERTING = false; // set to true to invert the logic of the endstop.
+const bool Z_MIN_PROBE_ENDSTOP_INVERTING = true; // set to true to invert the logic of the endstop.
 //#define DISABLE_MAX_ENDSTOPS
 //#define DISABLE_MIN_ENDSTOPS
 
@@ -515,7 +515,7 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = false; // set to true to invert the l
 // @section bedlevel
 
 #define AUTO_BED_LEVELING_FEATURE // Delete the comment to enable (remove // at the start of the line)
-//#define DEBUG_LEVELING_FEATURE
+#define DEBUG_LEVELING_FEATURE
 //#define Z_MIN_PROBE_REPEATABILITY_TEST  // If not commented out, Z Probe Repeatability test will be included if Auto Bed Leveling is Enabled.
 
 #if ENABLED(AUTO_BED_LEVELING_FEATURE)
@@ -587,11 +587,11 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = false; // set to true to invert the l
 
   #define XY_TRAVEL_SPEED 7000         // X and Y axis travel speed between probes, in mm/min.
 
-  #define Z_RAISE_BEFORE_PROBING 20   // How much the Z axis will be raised before traveling to the first probing point.
+  #define Z_RAISE_BEFORE_PROBING 0   // How much the Z axis will be raised before traveling to the first probing point.
   #define Z_RAISE_BETWEEN_PROBINGS 5 // How much the Z axis will be raised when traveling from between next probing points.
   #define Z_RAISE_AFTER_PROBING 20    // How much the Z axis will be raised after the last probing point.
 
-  #define Z_PROBE_END_SCRIPT "G1 Z20 X0 Y0 F7000"
+//#define Z_PROBE_END_SCRIPT "G1 Z20 X0 Y0 F7000"
 //#define Z_PROBE_END_SCRIPT "G1 Z10 F12000\nG1 X15 Y330\nG1 Z0.5\nG1 Z10" // These commands will be executed in the end of G29 routine.
                                                                             // Useful to retract a deployable Z probe.
 
@@ -613,7 +613,7 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = false; // set to true to invert the l
   // If you've enabled AUTO_BED_LEVELING_FEATURE and are using the Z Probe for Z Homing,
   // it is highly recommended you leave Z_SAFE_HOMING enabled!
 
-  #define Z_SAFE_HOMING   // Use the z-min-probe for homing to z-min - not the z-min-endstop.
+  //#define Z_SAFE_HOMING   // Use the z-min-probe for homing to z-min - not the z-min-endstop.
                           // This feature is meant to avoid Z homing with Z probe outside the bed area.
                           // When defined, it will:
                           // - Allow Z homing only after X and Y homing AND stepper drivers still enabled.
@@ -642,7 +642,7 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = false; // set to true to invert the l
 #if ENABLED(MANUAL_HOME_POSITIONS)
   #define MANUAL_X_HOME_POS 0
   #define MANUAL_Y_HOME_POS 0
-  #define MANUAL_Z_HOME_POS 655 // For delta: Distance between nozzle and print surface after homing.
+  #define MANUAL_Z_HOME_POS 528// For delta: Distance between nozzle and print surface after homing.
 #endif
 
 // @section movement
