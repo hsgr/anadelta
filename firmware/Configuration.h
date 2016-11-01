@@ -282,9 +282,9 @@
 
   // If you are using a pre-configured hotend then you can use one of the value sets by uncommenting it
   // oXis Kossel k800 XL
-  #define DEFAULT_Kp 22.04
-  #define DEFAULT_Ki 1.65
-  #define DEFAULT_Kd 73.67
+  #define DEFAULT_Kp 38.96
+  #define DEFAULT_Ki 5.02
+  #define DEFAULT_Kd 75.64
 
   // Kossel k800 XL
   //#define DEFAULT_Kp 22.25
@@ -315,7 +315,7 @@
 // If your configuration is significantly different than this and you don't understand the issues involved, you probably
 // shouldn't use bed PID until someone else verifies your hardware works.
 // If this is enabled, find your own PID constants below.
-//#define PIDTEMPBED
+#define PIDTEMPBED
 
 //#define BED_LIMIT_SWITCHING
 
@@ -333,15 +333,15 @@
 
   //120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   //from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor of .15 (vs .1, 1, 10)
-  #define  DEFAULT_bedKp 15.00
-  #define  DEFAULT_bedKi .04
-  #define  DEFAULT_bedKd 305.4
+  //#define  DEFAULT_bedKp 15.00
+  //#define  DEFAULT_bedKi .04
+  //#define  DEFAULT_bedKd 305.4
 
   //120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   //from pidautotune
-  //#define  DEFAULT_bedKp 97.1
-  //#define  DEFAULT_bedKi 1.41
-  //#define  DEFAULT_bedKd 1675.16
+  #define  DEFAULT_bedKp 183.34
+  #define  DEFAULT_bedKi 30.58
+  #define  DEFAULT_bedKd 274.85
 
   // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
 #endif // PIDTEMPBED
@@ -415,7 +415,7 @@
   #define DELTA_CARRIAGE_OFFSET 20.5 // mm
 
   // Horizontal distance bridged by diagonal push rods when effector is centered.
-  #define DELTA_RADIUS 251.4 // (DELTA_SMOOTH_ROD_OFFSET-(DELTA_EFFECTOR_OFFSET)-(DELTA_CARRIAGE_OFFSET) + 1)
+  #define DELTA_RADIUS 252 // (DELTA_SMOOTH_ROD_OFFSET-(DELTA_EFFECTOR_OFFSET)-(DELTA_CARRIAGE_OFFSET) + 1) // = 251.4
 
   // Print surface diameter/2 minus unreachable space (avoid collisions with vertical towers).
   #define DELTA_PRINTABLE_RADIUS 155.0
@@ -521,7 +521,7 @@
 //  (0,0)
 #define X_PROBE_OFFSET_FROM_EXTRUDER 0.0     // Z probe to nozzle X offset: -left  +right
 #define Y_PROBE_OFFSET_FROM_EXTRUDER 0.0     // Z probe to nozzle Y offset: -front +behind
-#define Z_PROBE_OFFSET_FROM_EXTRUDER -1.2    // Z probe to nozzle Z offset: -below (always!)
+#define Z_PROBE_OFFSET_FROM_EXTRUDER -1.0    // Z probe to nozzle Z offset: -below (always!)
 
 // X and Y axis travel speed (mm/m) between probes
 #define XY_PROBE_SPEED 8000
@@ -764,11 +764,11 @@
   #if ENABLED(AUTO_BED_LEVELING_GRID)
 
     // Set the rectangle in which to probe
-    #define DELTA_PROBEABLE_RADIUS 120 //(DELTA_PRINTABLE_RADIUS - 20)
-    #define LEFT_PROBE_BED_POSITION -120 //(DELTA_PROBEABLE_RADIUS)
-    #define RIGHT_PROBE_BED_POSITION 120 //DELTA_PROBEABLE_RADIUS
-    #define FRONT_PROBE_BED_POSITION -120 //(DELTA_PROBEABLE_RADIUS - 20)
-    #define BACK_PROBE_BED_POSITION 120 //DELTA_PROBEABLE_RADIUS - 40
+    #define DELTA_PROBEABLE_RADIUS 100 //(DELTA_PRINTABLE_RADIUS - 20)
+    #define LEFT_PROBE_BED_POSITION -100 //(DELTA_PROBEABLE_RADIUS)
+    #define RIGHT_PROBE_BED_POSITION 100 //DELTA_PROBEABLE_RADIUS
+    #define FRONT_PROBE_BED_POSITION -100 //(DELTA_PROBEABLE_RADIUS - 20)
+    #define BACK_PROBE_BED_POSITION 100 //DELTA_PROBEABLE_RADIUS - 40
 
     #define MIN_PROBE_EDGE 10 // The Z probe minimum square sides can be no smaller than this.
 
@@ -914,7 +914,7 @@
 #define PREHEAT_1_FAN_SPEED   255 // Value from 0 to 255
 
 #define PREHEAT_2_TEMP_HOTEND 230
-#define PREHEAT_2_TEMP_BED    60
+#define PREHEAT_2_TEMP_BED    70
 #define PREHEAT_2_FAN_SPEED   255 // Value from 0 to 255
 
 //
