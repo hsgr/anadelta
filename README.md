@@ -6,7 +6,7 @@ This repository includes all source files designed in freecad and roughly based 
 
 The firmware is Marlin-1.1.0-RC7.
 
-The configuration file for slic3r is config/anadelta.ini. 
+The configuration file for slic3r is config. 
 
 ## License
 
